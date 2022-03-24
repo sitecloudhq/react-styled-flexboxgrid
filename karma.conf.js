@@ -1,35 +1,35 @@
+require("@babel/register");
 
-require('@babel/register')
+const webpackConfig = Object.assign({}, require("./demo/webpack.config.babel"));
 
-const webpackConfig = Object.assign({}, require('./demo/webpack.config.babel'), {
-  entry: null,
-  output: null,
-  devtool: 'inline-source-map'
-})
-
-module.exports = function (config) {
+module.exports = function(config) {
   config.set({
     singleRun: true,
-
-    basePath: './',
+    frameworks: ["webpack", "mocha"],
+    plugins: [
+      "karma-webpack",
+      "karma-mocha",
+      "karma-sourcemap-loader",
+      "karma-firefox-launcher",
+      "karma-phantomjs-launcher"
+    ],
+    basePath: "./",
 
     files: [
-      { pattern: 'node_modules/@babel/polyfill/browser.js', instrument: false },
-      './src/**/*.test.js'
+      { pattern: "node_modules/@babel/polyfill/browser.js", instrument: false },
+      "./src/**/*.test.js"
     ],
 
     autoWatch: true,
 
-    frameworks: ['mocha'],
-
     preprocessors: {
-      './src/**/*.test.js': ['webpack', 'sourcemap']
+      "./src/**/*.test.js": ["webpack", "sourcemap"]
     },
 
     webpack: webpackConfig,
 
-    reporters: 'dots',
+    reporters: "dots",
 
-    browsers: [process.env.CI ? 'PhantomJS' : 'Chrome']
-  })
-}
+    browsers: [process.env.CI ? "PhantomJS" : "Firefox"]
+  });
+};

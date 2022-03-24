@@ -1,6 +1,6 @@
 {
   "name": "@sitecloud/react-styled-flexboxgrid",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Grid system based on styled-components and flexbox for React",
   "main": "lib/index.js",
   "jsnext:main": "dist/styled-flexboxgrid.es.js",
@@ -29,7 +29,6 @@
   "devDependencies": {
     "@babel/cli": "^7.17.6",
     "@babel/core": "^7.17.8",
-    "@babel/plugin-external-helpers": "^7.16.7",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
     "@babel/polyfill": "^7.12.1",
@@ -85,5 +84,6 @@
   },
   "dependencies": {
     "lodash.isinteger": "^4.0.4"
-  }
+  },
+  "private": false
 }

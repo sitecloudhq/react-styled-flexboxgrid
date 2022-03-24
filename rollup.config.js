@@ -10,12 +10,7 @@ const globals = {
 };
 const name = "react-styled-flexboxgrid";
 
-const plugins = [
-  babel({
-    plugins: ["@babel/plugin-external-helpers"],
-    babelHelpers: "external"
-  })
-];
+const plugins = [babel({})];
 
 const base = {
   input: "src/index.js",

@@ -1,6 +1,6 @@
 {
   "name": "@sitecloud/react-styled-flexboxgrid",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "Grid system based on styled-components and flexbox for React",
   "main": "lib/index.js",
   "jsnext:main": "dist/styled-flexboxgrid.es.js",
